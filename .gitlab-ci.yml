@@ -6,7 +6,7 @@ build:
     stage: build
     tags:
         - shell_exec
-    beforscript:
+    before_script:
         - mkdir SeisSol_build
         - cd SeisSol_build
         - wget https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
