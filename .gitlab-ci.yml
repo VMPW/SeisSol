@@ -1,0 +1,27 @@
+stages:
+    - build
+    - test
+
+build:
+    stage: build
+    script:
+        - echo "now building"
+        - mkdir SeisSol_build
+        - echo $CI_REGISTRY $CI_REGISTRY_IMAGE $CI_REGISTRY_USER
+        - ls
+        - pwd
+        - git version
+        - cmake version
+        - cd SeisSol_build
+
+
+    artifacts:
+        paths:
+            - SeisSol_build/
+test:
+    stage: test
+    script: 
+    - echo "echo testing"
+    - pwd
+    - ls
+    - python3 --version
