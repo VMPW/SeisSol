@@ -12,8 +12,8 @@ build:
         - echo $CI_REGISTRY $CI_REGISTRY_IMAGE $CI_REGISTRY_USER
         - ls
         - pwd
-        - git version
-        - cmake version
+        - git --version
+        - cmake --version
         - cd SeisSol_build
 
 
