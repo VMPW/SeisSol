@@ -25,6 +25,9 @@ build:
         - pip3 install setuptools
         - pip3 install sphinx
         - pip3 install sphinx_rtd_theme
+        - cd netcdf-4.6.1 && CC=h5pcc ./configure --prefix=/usr --enable-shared=no --disable-dap && make && sudo make install && cd ..
+        - unzip master.zip
+        - cd libxsmm-master && make generator && sudo cp bin/libxsmm_gemm_generator /usr/bin && cd ..
     script:
         - echo "now building"
         - echo $CI_REGISTRY $CI_REGISTRY_IMAGE $CI_REGISTRY_USER
