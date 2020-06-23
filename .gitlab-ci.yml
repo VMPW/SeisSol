@@ -11,6 +11,7 @@ build:
         - cd SeisSol_build
         - wget https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
         - wget https://github.com/hfp/libxsmm/archive/master.zip
+        - update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100
     script:
         - echo "now building"
         - echo $CI_REGISTRY $CI_REGISTRY_IMAGE $CI_REGISTRY_USER
