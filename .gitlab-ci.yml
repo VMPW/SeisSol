@@ -4,6 +4,8 @@ stages:
 
 build:
     stage: build
+    tags:
+        - shell_exec
     script:
         - echo "now building"
         - mkdir SeisSol_build
