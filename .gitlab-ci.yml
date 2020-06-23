@@ -7,10 +7,12 @@ build:
     tags:
         - shell_exec
     before_script:
+        - whoami
         - mkdir SeisSol_build
         - cd SeisSol_build
         - wget https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
         - wget https://github.com/hfp/libxsmm/archive/master.zip
+        - apt-get install gcc-8 g++-8 gfortran-8
         - update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100
     script:
         - echo "now building"
