@@ -17,7 +17,7 @@ build:
         - update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100
         - update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 100
         - gcc --version
-        - apt-get install -qq openmpi-bin openmpi-common libopenmpi-dev hdf5-tools libhdf5-openmpi-100 libhdf5-openmpi-dev python3 python3-pip libmetis-dev libparmetis-dev cxxtest
+        - apt-get install -qq --yes openmpi-bin openmpi-common libopenmpi-dev hdf5-tools libhdf5-openmpi-dev python3 python3-pip libmetis-dev libparmetis-dev cxxtest
         - gfortran --version
     script:
         - echo "now building"
