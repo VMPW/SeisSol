@@ -1,36 +1,36 @@
 [submodule "submodules/xdmfwriter"]
 	path = submodules/xdmfwriter
-	url = ../../TUM-I5/XdmfWriter.git
+	url = https://github.com/TUM-I5/XdmfWriter.git
 [submodule "submodules/cxxtest"]
 	path = submodules/cxxtest
-	url = ../../CxxTest/cxxtest.git
+	url = https://github.com/CxxTest/cxxtest.git
 [submodule "submodules/utils"]
 	path = submodules/utils
-	url = ../../TUM-I5/utils.git
+	url = https://github.com/TUM-I5/utils.git
 [submodule "submodules/async"]
 	path = submodules/async
-	url = ../../TUM-I5/ASYNC.git
+	url = https://github.com/TUM-I5/ASYNC.git
 [submodule "submodules/scons-tools"]
 	path = submodules/scons-tools
-	url = ../../TUM-I5/scons-tools.git
+	url = https://github.com/TUM-I5/scons-tools.git
 [submodule "submodules/PUML"]
 	path = submodules/PUML
-	url = ../../TUM-I5/PUML2.git
+	url = https://github.com/TUM-I5/PUML2.git
 [submodule "submodules/easi"]
 	path = submodules/easi
-	url = ../../SeisSol/easi.git
+	url = https://github.com/SeisSol/easi.git
 [submodule "submodules/yaml-cpp"]
 	path = submodules/yaml-cpp
-	url = ../../jbeder/yaml-cpp.git
+	url = https://github.com/jbeder/yaml-cpp.git
 [submodule "submodules/ImpalaJIT"]
 	path = submodules/ImpalaJIT
-	url = ../../uphoffc/ImpalaJIT.git
+	url = https://github.com/uphoffc/ImpalaJIT.git
 [submodule "submodules/yateto"]
 	path = submodules/yateto
-	url = ../../SeisSol/yateto.git
+	url = https://github.com/SeisSol/yateto.git
 [submodule "submodules/pythonXdmfReader"]
 	path = submodules/pythonXdmfReader
-	url = ../../Thomas-Ulrich/pythonXdmfReader
+	url = https://github.com/Thomas-Ulrich/pythonXdmfReader
 [submodule "submodules/eigen3"]
 	path = submodules/eigen3
-	url = ../../eigenteam/eigen-git-mirror
+	url = https://github.com/eigenteam/eigen-git-mirror
