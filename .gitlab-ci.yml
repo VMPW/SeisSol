@@ -16,7 +16,7 @@ build:
         - pwd
         - ls
         - git submodule sync --recursive
-         - git submodule update --init --recursive
+        - git submodule update --init --recursive
         - wget https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
         - wget https://github.com/hfp/libxsmm/archive/master.zip
         - apt-get --yes install gcc-8 g++-8 gfortran-8
