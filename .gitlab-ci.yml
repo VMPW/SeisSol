@@ -10,6 +10,7 @@ build:
         - whoami
         - su ubuntu
         - whoami
+        - su ubuntu -c "whoami"
         - pwd
         - ls
         - wget https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
@@ -55,7 +56,7 @@ build:
         - cmake -DNETCDF=OFF -DMETIS=ON -DCOMMTHREAD=ON -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=$build_type -DTESTING=ON -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DARCH=hsw -DPRECISION=$precision -DEQUATIONS=$equation -DNUMBER_OF_MECHANISMS=$mechanisms -DGEMM_TOOLS_LIST=LIBXSMM ..
         - make -j $(nproc)
         - whoami
-        - su -c ubuntu "make test"
+        - su ubuntu -c "make test"
         - cd ../..
 
     artifacts:
