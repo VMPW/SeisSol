@@ -31,9 +31,10 @@ build:
     script:
         - echo "now building"
         - echo $CI_REGISTRY $CI_REGISTRY_IMAGE $CI_REGISTRY_USER
-        - ls
+        - ls -a
         - pwd
         - git --version
+        - git submodule update --init --recursive
         - cmake --version
         - set -euo pipefail
         - export IFS=$'\n\t'
