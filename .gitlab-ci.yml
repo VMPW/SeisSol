@@ -8,8 +8,8 @@ build:
         - shell_exec
     before_script:
         - whoami
-        - mkdir SeisSol_build
-        - cd SeisSol_build
+        - pwd
+        - ls
         - wget https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
         - wget https://github.com/hfp/libxsmm/archive/master.zip
         - apt-get --yes install gcc-8 g++-8 gfortran-8
@@ -26,7 +26,6 @@ build:
         - pip3 install sphinx
         - pip3 install sphinx_rtd_theme
         - cd netcdf-4.6.1 && CC=h5pcc ./configure --prefix=/usr --enable-shared=no --disable-dap && make && sudo make install && cd ..
-        - unzip --help
         - unzip master.zip
         - cd libxsmm-master && make generator && sudo cp bin/libxsmm_gemm_generator /usr/bin && cd ..
     script:
@@ -50,8 +49,7 @@ build:
         - pwd 
         - ls .
         - ls ..
-        - ls ~
-        - PKG_CONFIG_PATH=~/lib/pkgconfig/
+        - CMAKE_PREFIX_PATH=~ PKG_CONFIG_PATH=~/lib/pkgconfig/ 
         - cmake -DNETCDF=OFF -DMETIS=ON -DCOMMTHREAD=ON -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=$build_type -DTESTING=ON -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DARCH=hsw -DPRECISION=$precision -DEQUATIONS=$equation -DNUMBER_OF_MECHANISMS=$mechanisms -DGEMM_TOOLS_LIST=LIBXSMM .
 
 
