@@ -6,6 +6,8 @@ build:
     stage: build
     tags:
         - shell_exec
+    variables:
+        GIT_SUBMODULE_STRATEGY: recursive
     before_script:
         - whoami
         - su ubuntu
@@ -13,6 +15,8 @@ build:
         - su ubuntu -c "whoami"
         - pwd
         - ls
+        - git submodule sync --recursive
+         - git submodule update --init --recursive
         - wget https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
         - wget https://github.com/hfp/libxsmm/archive/master.zip
         - apt-get --yes install gcc-8 g++-8 gfortran-8
