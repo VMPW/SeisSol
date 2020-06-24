@@ -36,6 +36,9 @@ build:
         - pwd
         - git --version
         - cmake --version
+        - set -euo pipefail
+        - export IFS=$'\n\t'
+        - export CTEST_OUTPUT_ON_FAILURE=1
 
 
 
