@@ -42,8 +42,8 @@ build:
         - equation=elastic
         - mechanisms=0
         - precision=double
-        - buildtype=Release
-        - echo $buildtype, $equation, $precision
+        - build_type=Release
+        - echo $build_type, $equation, $precision
         - dirname="build_${equation}_${precision}_${build_type}"
         - echo "mkdir $dirname"
         - mkdir -p $dirname && cd $dirname
