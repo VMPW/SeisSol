@@ -46,8 +46,7 @@ build:
         - mechanisms=0
         - build_type=Release
         - for precision in single double; do;
-            for equation in elastic viscoelastic2 anisotropic; do;
-            if ["$equation"==viscoelastic2]; then mechanisms=3; fi;
+            for build_type in Release Debug; do;
             echo $build_type, $equation, $precision, $mechanisms;
             dirname="build_${equation}_${precision}_${build_type}" ;
             echo "mkdir $dirname" ; 
