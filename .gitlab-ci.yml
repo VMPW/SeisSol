@@ -9,10 +9,6 @@ build:
     variables:
         GIT_SUBMODULE_STRATEGY: recursive
     before_script:
-        - whoami
-        - su ubuntu
-        - whoami
-        - su ubuntu -c "whoami"
         - pwd
         - ls
         - git submodule sync --recursive
@@ -48,12 +44,12 @@ build:
         - export CTEST_OUTPUT_ON_FAILURE=1
         - equation=elastic
         - mechanisms=0
-        - precision=double
         - build_type=Release
-        - echo $build_type, $equation, $precision
-        - dirname="build_${equation}_${precision}_${build_type}"
-        - echo "mkdir $dirname"
-        - mkdir -p $dirname && cd $dirname
+        - for precision in single double;
+            do echo $build_type, $equation, $precision;
+            dirname="build_${equation}_${precision}_${build_type}" ;
+            echo "mkdir $dirname" ; done
+        - mkdir -p $dirname && cd $dirname ;
         - pwd 
         - which pkg-config
         - CMAKE_PREFIX_PATH=~ 
