@@ -49,7 +49,7 @@ build:
                 do for equation in elastic viscoelastic2 anisotropic;
                     do dirname="build_${equation}_${precision}_${build_type}";
                     echo "mkdir $dirname";
-                    if [ "$equation" = viscoelastic2 ]; then mechanisms=3; fi;
+                    if [ "$equation" = viscoelastic2 ]; then mechanisms=3; else mechanisms=0; fi;
                     mkdir -p $dirname && cd $dirname ;
                     pwd; 
                     CMAKE_PREFIX_PATH=~ ;
@@ -73,6 +73,8 @@ test:
     - su ubuntu -c "make test"
     - cd ../build_elastic_single_Release
     - su ubuntu -c "make test"
-    - cd ../build_elastic_single_Debug
+    - cd ../build_viscoelastic2_double_Release
     - su ubuntu -c "make test"
-    - cd ../build_elastic_double_Debug
+    - cd ../build_anisotropic_double_Release
+    - su ubuntu -c "make test"
+    
