@@ -44,18 +44,19 @@ build:
         - export CTEST_OUTPUT_ON_FAILURE=1
         - equation=elastic
         - mechanisms=0
-        - build_type=Release
-        - for precision in single double; do;
-            for build_type in Release Debug; do;
-            echo $build_type, $equation, $precision, $mechanisms;
-            dirname="build_${equation}_${precision}_${build_type}" ;
-            echo "mkdir $dirname" ; 
-            mkdir -p $dirname && cd $dirname ;
-            pwd; 
-            CMAKE_PREFIX_PATH=~ ;
-            cmake -DNETCDF=OFF -DMETIS=ON -DCOMMTHREAD=ON -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=$build_type -DTESTING=ON -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DARCH=hsw -DPRECISION=$precision -DEQUATIONS=$equation -DNUMBER_OF_MECHANISMS=$mechanisms -DGEMM_TOOLS_LIST=LIBXSMM .. ;
-            make -j $(nproc);
-            cd .. ; done; done
+        - for precision in single double ; do;
+            for build_type in Release Debug ; do;
+                dirname="build_${equation}_${precision}_${build_type}" ;
+                echo "mkdir $dirname" ; 
+                mkdir -p $dirname && cd $dirname ;
+                pwd; 
+                CMAKE_PREFIX_PATH=~ ;
+                cmake -DNETCDF=OFF -DMETIS=ON -DCOMMTHREAD=ON -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=$build_type -DTESTING=ON -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DARCH=hsw -DPRECISION=$precision -DEQUATIONS=$equation -DNUMBER_OF_MECHANISMS=$mechanisms -DGEMM_TOOLS_LIST=LIBXSMM .. ;
+                make -j $(nproc);
+                cd .. ; 
+             done; 
+          done;
+          
     artifacts:
         paths:
             - build_*
