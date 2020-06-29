@@ -57,15 +57,16 @@ build:
         - make -j $(nproc)
         - whoami
         - su ubuntu -c "make test"
-        - cd ../..
+        - cd ..
 
     artifacts:
         paths:
-            - SeisSol/build_*
+            - build_*
 test:
     stage: test
     script: 
     - echo "echo testing"
     - pwd
     - ls
-    - python3 --version
+    - cd build_elastic_double_Release
+    - su ubuntu -c "make test"
