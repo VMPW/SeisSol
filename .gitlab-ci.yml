@@ -46,14 +46,17 @@ build:
         - mechanisms=0
         - for precision in single double ; 
             do for build_type in Release Debug ; 
-                do dirname="build_${equation}_${precision}_${build_type}" ;
-                echo "mkdir $dirname" ; 
-                mkdir -p $dirname && cd $dirname ;
-                pwd; 
-                CMAKE_PREFIX_PATH=~ ;
-                cmake -DNETCDF=OFF -DMETIS=ON -DCOMMTHREAD=ON -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=$build_type -DTESTING=ON -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DARCH=hsw -DPRECISION=$precision -DEQUATIONS=$equation -DNUMBER_OF_MECHANISMS=$mechanisms -DGEMM_TOOLS_LIST=LIBXSMM .. ;
-                make -j $(nproc);
-                cd .. ; 
+                do for equation in elastic viscoelastic2 anisotropic;
+                    do dirname="build_${equation}_${precision}_${build_type}";
+                    echo "mkdir $dirname";
+                    if [ "$equation" = viscoelastic2 ]; then mechanisms=3; fi;
+                    mkdir -p $dirname && cd $dirname ;
+                    pwd; 
+                    CMAKE_PREFIX_PATH=~ ;
+                    cmake -DNETCDF=OFF -DMETIS=ON -DCOMMTHREAD=ON -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=$build_type -DTESTING=ON -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DARCH=hsw -DPRECISION=$precision -DEQUATIONS=$equation -DNUMBER_OF_MECHANISMS=$mechanisms -DGEMM_TOOLS_LIST=LIBXSMM .. ;
+                    make -j $(nproc);
+                    cd .. ; 
+                  done;
              done; 
           done;
           
