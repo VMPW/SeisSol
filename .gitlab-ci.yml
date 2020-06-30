@@ -34,7 +34,6 @@ build:
     script:
         - echo "now building"
         - echo $CI_REGISTRY $CI_REGISTRY_IMAGE $CI_REGISTRY_USER
-        - ls -a
         - pwd
         - git --version
         - git submodule update --init --recursive
