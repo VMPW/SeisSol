@@ -69,7 +69,4 @@ test:
     - pwd
     - ls
     - whoami
-    - cd build_elastic_double_Debug
-    - sudo su ubuntu -c "make test"
-    - cd ..
     - for i in ./build_elastic* ./build_visco*; do echo $i; cd $i; sudo su ubuntu -c "make test"; cd ..;  done
