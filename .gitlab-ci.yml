@@ -43,9 +43,9 @@ build:
         - export CTEST_OUTPUT_ON_FAILURE=1
         - equation=elastic
         - mechanisms=0
-        - for precision in double ; 
-            do for build_type in Debug ; 
-                do for equation in elastic ;
+        - for precision in double single ; 
+            do for build_type in Release Debug ; 
+                do for equation in elastic viscoelastic2 anisotropic ;
                     do dirname="build_${equation}_${precision}_${build_type}";
                     echo "mkdir $dirname";
                     if [ "$equation" = viscoelastic2 ]; then mechanisms=3; else mechanisms=0; fi;
@@ -70,4 +70,5 @@ test:
     - ls
     - cd build_elastic_double_Debug
     - sudo su ubuntu -c "make test"
-    - for i in ./build_elastic* ./build_visco*; do echo $i; cd $i; make test; cd ..;  done
+    - cd ..
+    - for i in ./build_elastic* ./build_visco*; do echo $i; cd $i; sudo su ubuntu -c "make test"; cd ..;  done
