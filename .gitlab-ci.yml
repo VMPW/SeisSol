@@ -69,14 +69,14 @@ test:
     - pwd
     - ls
     - cd build_elastic_double_Release
-    - make test
+    - sudo su ubuntu -c "make test"
     - cd ../build_elastic_single_Release
-    - make test
+    - sudo su ubuntu -c "make test"
     - cd ../build_elastic_double_Debug
-    - make test
+    - sudo su ubuntu -c "make test"
     - cd ../build_elastic_single_Debug
-    - make test
+    - sudo su ubuntu -c "make test"
     - cd ../build_viscoelastic2_double_Release
-    - make test
+    - sudo su ubuntu -c "make test"
     - cd ../build_viscoelastic2_double_Debug
-    - make test
+    - sudo su ubuntu -c "make test"
