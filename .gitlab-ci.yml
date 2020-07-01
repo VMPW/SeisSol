@@ -68,5 +68,5 @@ test:
     - echo "echo testing"
     - pwd
     - ls
-    - cd ../build_elastic_double_Debug
+    - cd build_elastic_double_Debug
     - sudo su ubuntu -c "make test"
