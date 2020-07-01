@@ -43,8 +43,8 @@ build:
         - export CTEST_OUTPUT_ON_FAILURE=1
         - equation=elastic
         - mechanisms=0
-        - for precision in single double ; 
-            do for build_type in  Debug ; 
+        - for precision in double ; 
+            do for build_type in Debug ; 
                 do for equation in elastic ;
                     do dirname="build_${equation}_${precision}_${build_type}";
                     echo "mkdir $dirname";
@@ -68,15 +68,5 @@ test:
     - echo "echo testing"
     - pwd
     - ls
-    - cd build_elastic_double_Release
-    - sudo su ubuntu -c "make test"
-    - cd ../build_elastic_single_Release
-    - sudo su ubuntu -c "make test"
-    - cd ../build_elastic_double_Debug
-    - sudo su ubuntu -c "make test"
     - cd ../build_elastic_single_Debug
-    - sudo su ubuntu -c "make test"
-    - cd ../build_viscoelastic2_double_Release
-    - sudo su ubuntu -c "make test"
-    - cd ../build_viscoelastic2_double_Debug
     - sudo su ubuntu -c "make test"
