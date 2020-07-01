@@ -70,3 +70,4 @@ test:
     - ls
     - cd build_elastic_double_Debug
     - sudo su ubuntu -c "make test"
+    - for i in ./build_elastic* ./build_visco*; do echo $i; cd $i; make test; cd ..;  done
