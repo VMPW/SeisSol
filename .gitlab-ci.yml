@@ -13,6 +13,11 @@ build:
         - pwd
         - ls
         - git branch -vva
+        - git log --format="%H" -n 1
+        - git log --format="%H" -n 1 > commit_id
+        - git --no-pager show -s --format='%ae' $commit_id
+        - git --no-pager show -s --format='%ae' $commit_id > commit_author_name
+        - echo $commit_author_name
         - git submodule --quiet sync --recursive
         - git submodule --quiet update --init --recursive
         - wget -q https://syncandshare.lrz.de/dl/fiJNAokgbe2vNU66Ru17DAjT/netcdf-4.6.1.tar.gz
