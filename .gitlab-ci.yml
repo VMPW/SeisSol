@@ -48,7 +48,7 @@ build:
         - export CTEST_OUTPUT_ON_FAILURE=1
         - equation=elastic
         - mechanisms=0
-        - for precision in single ; 
+        - for precision in double ; 
             do for build_type in Release ; 
                 do for equation in elastic;
                     do dirname="build_${equation}_${precision}_${build_type}";
