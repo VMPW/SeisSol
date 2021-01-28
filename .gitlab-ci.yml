@@ -10,7 +10,7 @@ build_sing:
         - whoami
         - pwd
         - ls
-        - cd singularity
+        - cd /home/ubuntu/singularity
     
     artifacts:
         paths:
