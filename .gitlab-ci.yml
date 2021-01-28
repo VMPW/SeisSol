@@ -5,8 +5,8 @@ stages:
 build:
     stage: build
     tags:
-        - dbuilder_cc
         - shell_exec
+        - dbuilder_cc
     before_script:
         - echo "before script"
         - whoami
@@ -17,7 +17,7 @@ build:
         - whoami
         - pwd
         - ls
-        - cd /home/ubuntu/singularity
+
     
     artifacts:
         paths:
