@@ -7,6 +7,11 @@ build:
     tags:
         - dbuilder_cc
     before_script:    
+        - cd /home/ubuntu/singularity
+        - ./bin/singularity --version
+        - ./bin/singularity -h
+        - singularity pull library://7bits-register/collection/seissol-base.sif_sha256.99a798009fb5845985cc898de558d384bfc8b5354e955037c14896518d2f1820.sif
+        - singularity shell seissol-base.sif_sha256.99a798009fb5845985cc898de558d384bfc8b5354e955037c14896518d2f1820.sif
         - git branch -vva
         - git log --format="%H" -n 1
         - git log --format="%H" -n 1 > commit_id
@@ -51,11 +56,7 @@ build:
         - mkdir -p $dirname && cd $dirname
         - pwd 
         - CMAKE_PREFIX_PATH=~
-        - cd /home/ubuntu/singularity
-        - ./bin/singularity --version
-        - ./bin/singularity -h
-        - singularity pull library://7bits-register/collection/seissol-base.sif_sha256.99a798009fb5845985cc898de558d384bfc8b5354e955037c14896518d2f1820.sif
-        - singularity shell seissol-base.sif_sha256.99a798009fb5845985cc898de558d384bfc8b5354e955037c14896518d2f1820.sif
+
          
        
     artifacts:
