@@ -6,12 +6,11 @@ build:
     stage: build
     tags:
         - dbuilder_cc
-    before_script:    
+    before_script:   
+        - whoami
         - cd /home/ubuntu/singularity
-        - ./bin/singularity --version
-        - ./bin/singularity -h
-        - singularity pull library://7bits-register/collection/seissol-base.sif_sha256.99a798009fb5845985cc898de558d384bfc8b5354e955037c14896518d2f1820.sif
-        - singularity shell seissol-base.sif_sha256.99a798009fb5845985cc898de558d384bfc8b5354e955037c14896518d2f1820.sif
+        - sudo ./bin/singularity --version
+        - sudo ./bin/singularity -h
         - git branch -vva
         - git log --format="%H" -n 1
         - git log --format="%H" -n 1 > commit_id
