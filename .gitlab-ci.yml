@@ -2,11 +2,17 @@ stages:
     - build
     - test
 
-build_sing:
+build:
     stage: build
     tags:
         - dbuilder_cc
+    before_script:
+        - echo "before script"
+        - whoami
+        - pwd
+        - ls
     script:
+        - echo "script"
         - whoami
         - pwd
         - ls
