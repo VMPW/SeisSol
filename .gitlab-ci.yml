@@ -1,7 +1,7 @@
 stages:
     - build
 
-build_singularity:
+build_sing:
     stage: build
     tags:
         - dbuilder_cc
