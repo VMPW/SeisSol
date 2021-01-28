@@ -6,6 +6,7 @@ build:
     stage: build
     tags:
         - dbuilder_cc
+        - shell_exec
     before_script:
         - echo "before script"
         - whoami
