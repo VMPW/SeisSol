@@ -5,7 +5,7 @@ stages:
 build:
     stage: build
     tags:
-        - shell_exec
+        - dbuilder_cc
     before_script:   
         - whoami
         - git branch -vva
