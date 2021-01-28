@@ -2,7 +2,16 @@ stages:
     - build
     - test
 
-build:
+build_singularity:
+    stage: build
+    tags:
+        - dbuilder_cc
+    script:
+        - whoami
+        - pwd
+        - ls
+     
+build_shell:
     stage: build
     tags:
         - shell_exec
@@ -60,7 +69,7 @@ build:
     artifacts:
         paths:
             - build_*
-test:
+ test:
     stage: test
     script: 
     - echo "echo testing"
