@@ -8,8 +8,6 @@ build:
         - dbuilder_cc
     before_script:   
         - whoami
-        - cd /home/ubuntu/singularity
-        - ls
         - git branch -vva
         - git log --format="%H" -n 1
         - git log --format="%H" -n 1 > commit_id
