@@ -1,5 +1,6 @@
 stages:
     - build
+    - test
 
 build_sing:
     stage: build
@@ -10,3 +11,11 @@ build_sing:
         - pwd
         - ls
     
+    artifacts:
+        paths:
+            - build_*
+test:
+    stage: test
+    script: 
+    - echo "echo testing"
+    - pwd
